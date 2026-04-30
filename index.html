@@ -8,7 +8,7 @@
         :root { --main-pink: #FF85A2; --soft-pink: #FFF0F3; }
         body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Pretendard', sans-serif; background: #fff; }
         
-        .slider-container { display: flex; width: 900%; height: 100vh; transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1); }
+        .slider-container { display: flex; width: 800%; height: 100vh; transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1); }
         .slide { width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; position: relative; background: linear-gradient(135deg, #fff 0%, #fff5f7 100%); }
         .content-box { width: 90%; max-width: 1200px; height: 85vh; position: relative; padding: 40px; box-sizing: border-box; }
         
@@ -26,7 +26,7 @@
         /* 카드 그리드 */
         .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
         .white-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(255, 133, 162, 0.08); border: 1px solid #f0f0f0; }
-        .white-card img { width: 100%; height: 200px; object-fit: cover; }
+        .white-card img { width: 100%; height: 250px; object-fit: cover; }
         .card-text { padding: 15px; text-align: center; }
         .card-text h4 { margin: 5px 0; font-size: 16px; color: #333; }
         .card-text p { font-size: 13px; color: #888; margin: 0; }
@@ -48,16 +48,7 @@
         </div>
     </div>
 
-    <!-- 2. 슬로건 -->
-    <div class="slide">
-        <div class="content-box" style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
-            <div style="width: 80px; height: 4px; background: var(--main-pink); margin: 0 auto 30px;"></div>
-            <h1 style="font-size: 72px;">The Creative Soul</h1>
-            <p style="font-size: 20px; color: #666;">전통과 혁신을 잇는 예술가적 통찰</p>
-        </div>
-    </div>
-
-    <!-- 3. 자기소개 -->
+    <!-- 2. 자기소개 (프로필 사진 경로 수정) -->
     <div class="slide">
         <div class="content-box">
             <div class="section-title">Personal Introduction</div>
@@ -71,7 +62,7 @@
         </div>
     </div>
 
-    <!-- 4. 미스코리아 (왕관 사진 적용) -->
+    <!-- 3. 미스코리아 (핑크 드레스 사진 경로 수정) -->
     <div class="slide">
         <div class="content-box" style="display: flex; align-items: center;">
             <div style="flex: 1; padding-right: 40px;">
@@ -80,17 +71,18 @@
                 <p style="line-height: 1.8; color: #666; margin-top: 20px;">지역의 가치와 한국의 미를 현대적 지성으로 대표하며 다양한 예술 활동을 성공적으로 전개해 왔습니다.</p>
             </div>
             <div style="flex: 1; height: 100%;">
-                <img src="input_file_1.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                <img src="KakaoTalk_20260428_135613771_04.jpg" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
             </div>
         </div>
     </div>
 
-    <!-- 5. 홍보대사 & 모델 (화이트 드레스 사진 적용) -->
+    <!-- 4. 홍보대사 & 모델 (화이트 드레스 및 소다 사진 경로 수정) -->
     <div class="slide">
         <div class="content-box">
             <div class="section-title">Brand & Influence</div>
             <div class="card-grid">
                 <div class="white-card">
+                    <!-- 유네스코 사진은 기존 파일명 유지 -->
                     <img src="KakaoTalk_20260428_135613771_01_2.jpg">
                     <div class="card-text">
                         <h4>유네스코 홍보대사</h4>
@@ -105,7 +97,7 @@
                     </div>
                 </div>
                 <div class="white-card">
-                    <img src="input_file_0.png">
+                    <img src="KakaoTalk_20260428_135613771_01.jpg">
                     <div class="card-text">
                         <h4>뷰티 렌즈 모델</h4>
                         <p>브랜드 메인 모델</p>
@@ -115,7 +107,7 @@
         </div>
     </div>
 
-    <!-- 6. 수상 및 대외활동 (시점 반영) -->
+    <!-- 5. 수상 및 대외활동 (2026년 기준 수료 반영) -->
     <div class="slide">
         <div class="content-box">
             <div class="section-title">Awards & Experience</div>
@@ -136,7 +128,7 @@
         </div>
     </div>
 
-    <!-- 7. 핵심 역량 그래프 -->
+    <!-- 6. 핵심 역량 그래프 -->
     <div class="slide">
         <div class="content-box">
             <div class="section-title">Core Competencies</div>
@@ -157,7 +149,7 @@
         </div>
     </div>
 
-    <!-- 8. 마무리 -->
+    <!-- 7. 마무리 -->
     <div class="slide" style="background: var(--soft-pink);">
         <div class="content-box" style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
             <h1 style="font-size: 60px; margin-bottom: 20px;">Let's Create Together</h1>
@@ -181,7 +173,7 @@
     function moveSlide(dir) {
         currentIdx += dir;
         if (currentIdx < 0) currentIdx = 0;
-        if (currentIdx > 7) currentIdx = 7;
+        if (currentIdx > 6) currentIdx = 6;
         slider.style.transform = `translateX(-${currentIdx * 100}vw)`;
     }
     window.addEventListener('keydown', (e) => {
