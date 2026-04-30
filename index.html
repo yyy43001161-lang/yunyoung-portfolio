@@ -5,47 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yoon Yoon Young Portfolio</title>
     <style>
-        :root {
-            --bg-pink: #FFF0F3;
-            --card-pink: #FFFBFC;
-            --accent-pink: #FF85A2;
-            --text-gray: #4A4A4A;
-        }
-        body {
-            font-family: 'Pretendard', -apple-system, sans-serif;
-            background-color: var(--bg-pink);
-            margin: 0; padding: 20px;
-            display: flex; justify-content: center;
-        }
-        .main-card {
-            width: 100%; max-width: 950px;
-            background: var(--card-pink);
-            border-radius: 30px; padding: 40px;
-            box-shadow: 0 10px 40px rgba(255, 133, 162, 0.1);
-            border: 1px solid rgba(255, 133, 162, 0.2);
-        }
+        :root { --bg-pink: #FFF0F3; --accent-pink: #FF85A2; --text-gray: #4A4A4A; }
+        body { font-family: 'Pretendard', sans-serif; background-color: var(--bg-pink); margin: 0; padding: 20px; display: flex; justify-content: center; }
+        .main-card { width: 100%; max-width: 1000px; background: #FFFBFC; border-radius: 30px; padding: 40px; box-shadow: 0 10px 40px rgba(255, 133, 162, 0.1); border: 1px solid rgba(255, 133, 162, 0.2); }
         header { display: flex; justify-content: space-between; margin-bottom: 40px; }
-        .intro h1 { font-size: 3rem; margin: 0; font-weight: 800; letter-spacing: -2px; }
-        .intro p.sub { font-size: 1.2rem; color: var(--text-gray); margin: 5px 0 20px; }
-        .profile-area { text-align: right; }
-        .profile-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .intro h1 { font-size: 3.5rem; margin: 0; font-weight: 800; letter-spacing: -2px; }
+        .intro p.sub { font-size: 1.3rem; color: var(--text-gray); margin: 5px 0 20px; }
+        .profile-area { position: relative; }
+        .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 5px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        
+        .info-box { background: #FFE5EC; padding: 25px; border-radius: 20px; margin-bottom: 40px; position: relative; }
+        .info-box p { margin: 8px 0; font-size: 1rem; color: #333; }
+        .badge { background: var(--accent-pink); color: white; padding: 6px 18px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; display: inline-block; margin-top: 10px; }
 
         .highlights { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin-bottom: 40px; }
-        .h-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); transition: 0.3s; text-align: center; border: 1px solid #F0F0F0; }
-        .h-card:hover { transform: translateY(-5px); }
-        .h-card img { width: 100%; height: 200px; object-fit: cover; }
-        .h-card h3 { font-size: 0.85rem; margin: 12px 5px 5px; font-weight: 700; }
-        .h-card p { font-size: 0.7rem; color: #888; margin-bottom: 15px; padding: 0 5px; }
-
-        .info-box { background: #FFE5EC; padding: 20px; border-radius: 20px; margin-bottom: 20px; line-height: 1.6; font-size: 0.95rem; }
-        .badge { background: var(--accent-pink); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+        .h-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border: 1px solid #F0F0F0; text-align: center; }
+        .h-card img { width: 100%; height: 220px; object-fit: cover; background: #f9f9f9; } /* 로딩 전 배경색 */
+        .h-card h3 { font-size: 0.9rem; margin: 15px 5px 5px; font-weight: 700; }
+        .h-card p { font-size: 0.75rem; color: #888; margin-bottom: 15px; padding: 0 10px; }
 
         .footer-grid { display: grid; grid-template-columns: 1fr 1fr 2fr 2fr; gap: 15px; }
-        .f-item { background: #F8F9FA; border-radius: 15px; padding: 15px; border: 1px solid #EEE; text-align: center; }
-        .f-item h4 { font-size: 0.75rem; color: var(--accent-pink); margin: 0 0 8px; }
-        .f-item p { font-size: 0.8rem; margin: 0; font-weight: 600; }
-        .thumb-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-top: 10px; }
-        .thumb-grid img { width: 100%; height: 40px; border-radius: 5px; object-fit: cover; }
+        .f-item { background: white; border-radius: 15px; padding: 20px; border: 1px solid #EEE; text-align: center; }
+        .f-item h4 { font-size: 0.8rem; color: var(--accent-pink); margin: 0 0 10px; font-weight: 800; }
+        .f-item p { font-size: 0.9rem; margin: 0; font-weight: 600; }
+        .thumb-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 12px; }
+        .thumb-grid img { width: 100%; height: 45px; border-radius: 8px; object-fit: cover; background: #eee; }
     </style>
 </head>
 <body>
@@ -55,69 +39,64 @@
                 <h1>YOON YOON YOUNG</h1>
                 <p class="sub">PORTFOLIO - Art & AI Convergence</p>
                 <div class="info-box">
-                    <strong>성균관대학교 동양화 & 인공지능융합 복수전공 중</strong><br>
-                    📧 killer.yoon33@gmail.com | 📸 @killer_yoon<br>
-                    동양화의 우아함과 AI의 지성을 연결하며, 언제나 밝고 긍정적인 에너지로 주변을 환하게 만드는 크리에이티브입니다. <br>
+                    <p><strong>성균관대학교 동양화 & 인공지능융합 복수전공 중</strong></p>
+                    <p>📧 killer.yoon33@gmail.com | 📸 @killer_yoon</p>
+                    <p>동양화의 우아함과 AI의 지성을 연결하며, 언제나 밝고 긍정적인 에너지로 주변을 환하게 만드는 크리에이티브입니다.</p>
                     <span class="badge">Bright & Positive</span>
                 </div>
             </div>
             <div class="profile-area">
-                <img src="image_0dac59.jpg" class="profile-img" alt="윤영">
+                <img src="91a564ad-5a88-4c8b-ae21-d34833e5c54b.jpeg" class="profile-img" alt="윤영 프로필">
             </div>
         </header>
 
         <section class="highlights">
-            <!-- 1. 미스코리아 -->
             <div class="h-card">
-                <img src="image_0f7dd9.jpg">
+                <img src="91a564ad-5a88-4c8b-ae21-d34833e5c54b.jpeg" alt="미스코리아">
                 <h3>Pageant Success</h3>
                 <p>2025 미스코리아 대전세종충청 미(3위)</p>
             </div>
-            <!-- 2. 유네스코 홍보대사 -->
             <div class="h-card">
-                <img src="KakaoTalk_20260428_135613771_01.jpg">
+                <img src="KakaoTalk_20260428_135613771_01_2.jpg" alt="유네스코">
                 <h3>Public Ambassador</h3>
                 <p>2025 유네스코 선정릉 홍보대사</p>
             </div>
-            <!-- 3. 삼성 갤럭시 -->
             <div class="h-card">
-                <img src="KakaoTalk_20260428_135613771_04.jpg">
+                <img src="KakaoTalk_20260428_135613771_04_2.jpg" alt="삼성 갤럭시">
                 <h3>Samsung Supporter</h3>
                 <p>2025 삼성 갤럭시 서포터즈</p>
             </div>
-            <!-- 4. SODA 모델 -->
             <div class="h-card">
-                <img src="91a564ad-5a88-4c8b-ae21-d34833e5c54b.jpeg">
+                <img src="a74fb749-6fdc-45b3-ac34-4380eb31b087.jpeg" alt="SODA 모델">
                 <h3>SODA App Model</h3>
-                <p>SODA 카메라 모끼가상 메인 모델</p>
+                <p>SODA 카메라 토끼상 메인 모델</p>
             </div>
-            <!-- 5. 뷰티 모델 -->
             <div class="h-card">
-                <img src="a74fb749-6fcd-45b3-ac34-4380eb31b087.jpeg">
+                <img src="91a564ad-5a88-4c8b-ae21-d34833e5c54b.jpeg" alt="뷰티 모델">
                 <h3>Lens & Beauty Model</h3>
                 <p>뷰티 렌즈 브랜드 모델</p>
             </div>
         </section>
 
         <section class="footer-grid">
-            <div class="f-item">
-                <h4>SOCIAL PROJECT</h4>
-                <p>공모전 최우수상</p>
-            </div>
-            <div class="f-item">
-                <h4>AI FUSION</h4>
-                <p>학술제 대상</p>
-            </div>
+            <div class="f-item"><h4>SOCIAL PROJECT</h4><p>공모전 최우수상</p></div>
+            <div class="f-item"><h4>AI FUSION</h4><p>학술제 대상</p></div>
             <div class="f-item">
                 <h4>Portfolios (동양화)</h4>
                 <div class="thumb-grid">
-                    <img src="image_0dac59.jpg"><img src="image_0f7dd9.jpg"><img src="image_0f7dd9.jpg"><img src="image_0dac59.jpg">
+                    <img src="91a564ad-5a88-4c8b-ae21-d34833e5c54b.jpeg">
+                    <img src="a74fb749-6fdc-45b3-ac34-4380eb31b087.jpeg">
+                    <img src="91a564ad-5a88-4c8b-ae21-d34833e5c54b.jpeg">
+                    <img src="a74fb749-6fdc-45b3-ac34-4380eb31b087.jpeg">
                 </div>
             </div>
             <div class="f-item">
                 <h4>AI Projects (융합)</h4>
                 <div class="thumb-grid">
-                    <img src="KakaoTalk_20260428_135613771_01.jpg"><img src="KakaoTalk_20260428_135613771_04.jpg"><img src="91a564ad-5a88-4c8b-ae21-d34833e5c54b.jpeg"><img src="a74fb749-6fcd-45b3-ac34-4380eb31b087.jpeg">
+                    <img src="KakaoTalk_20260428_135613771_01_2.jpg">
+                    <img src="KakaoTalk_20260428_135613771_04_2.jpg">
+                    <img src="91a564ad-5a88-4c8b-ae21-d34833e5c54b.jpeg">
+                    <img src="a74fb749-6fdc-45b3-ac34-4380eb31b087.jpeg">
                 </div>
             </div>
         </section>
