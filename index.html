@@ -16,14 +16,14 @@
         .pink-text { color: var(--main-pink); font-style: italic; }
         .section-title { font-size: 48px; font-weight: 800; border-left: 8px solid var(--main-pink); padding-left: 20px; margin-bottom: 40px; }
         
-        /* 역량 그래프 스타일 */
+        /* 역량 그래프 */
         .skill-container { margin-top: 30px; }
         .skill-bar-wrapper { margin-bottom: 25px; }
         .skill-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; display: flex; justify-content: space-between; }
         .skill-bar-bg { background: #eee; height: 12px; border-radius: 10px; width: 100%; overflow: hidden; }
-        .skill-bar-fill { background: var(--main-pink); height: 100%; border-radius: 10px; transition: width 1s ease-in-out; }
+        .skill-bar-fill { background: var(--main-pink); height: 100%; border-radius: 10px; }
 
-        /* 경력 카드 스타일 */
+        /* 카드 그리드 */
         .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
         .white-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(255, 133, 162, 0.08); border: 1px solid #f0f0f0; }
         .white-card img { width: 100%; height: 200px; object-fit: cover; }
@@ -31,7 +31,6 @@
         .card-text h4 { margin: 5px 0; font-size: 16px; color: #333; }
         .card-text p { font-size: 13px; color: #888; margin: 0; }
 
-        /* 네비게이션 */
         .nav-btns { position: fixed; bottom: 40px; right: 40px; display: flex; gap: 15px; z-index: 100; }
         .nav-btn { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--main-pink); background: white; color: var(--main-pink); cursor: pointer; font-weight: bold; }
         .nav-btn:hover { background: var(--main-pink); color: white; }
@@ -40,7 +39,7 @@
 <body>
 
 <div class="slider-container" id="slider">
-    <!-- 1. 표지 (image_0cd266.png 참조) -->
+    <!-- 1. 표지 -->
     <div class="slide">
         <div class="content-box" style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
             <p style="letter-spacing: 5px; color: var(--main-pink); font-weight: 700;">PROFESSIONAL PORTFOLIO</p>
@@ -49,7 +48,7 @@
         </div>
     </div>
 
-    <!-- 2. 슬로건 (image_0cd661.jpg 참조) -->
+    <!-- 2. 슬로건 -->
     <div class="slide">
         <div class="content-box" style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
             <div style="width: 80px; height: 4px; background: var(--main-pink); margin: 0 auto 30px;"></div>
@@ -58,7 +57,7 @@
         </div>
     </div>
 
-    <!-- 3. 자기소개 (image_0cd627.jpg 참조) -->
+    <!-- 3. 자기소개 -->
     <div class="slide">
         <div class="content-box">
             <div class="section-title">Personal Introduction</div>
@@ -67,27 +66,26 @@
                 <div style="flex: 1;">
                     <h2 style="color: var(--main-pink); font-size: 32px;">Bright & Positive Energy</h2>
                     <p style="font-size: 17px; line-height: 1.8; color: #555;">성균관대학교에서 동양화와 인공지능융합전공을 복수전공하고 있는 윤윤영입니다. 예술적 감성과 데이터 기술을 결합하여 본질을 명확히 전달하는 가치를 추구합니다.</p>
-                    <p style="font-weight: 800; font-size: 19px; margin-top: 20px;">"복잡함 속에서도 본질을 잃지 않는 명확한 결과를 지향합니다."</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 4. 미스코리아 경력 (image_0cd33e.jpg 참조) -->
+    <!-- 4. 미스코리아 (왕관 사진 적용) -->
     <div class="slide">
         <div class="content-box" style="display: flex; align-items: center;">
             <div style="flex: 1; padding-right: 40px;">
                 <h1 style="font-size: 55px; margin-bottom: 10px;">2025 Miss Korea</h1>
                 <h2 style="color: var(--main-pink); font-size: 28px;">대전·세종·충청 '미' 수상 & 본선 진출</h2>
-                <p style="line-height: 1.8; color: #666; margin-top: 20px;">지역의 가치와 한국의 미를 현대적 지성으로 대표하며 예술적 활동을 전개하고 있습니다.</p>
+                <p style="line-height: 1.8; color: #666; margin-top: 20px;">지역의 가치와 한국의 미를 현대적 지성으로 대표하며 다양한 예술 활동을 성공적으로 전개해 왔습니다.</p>
             </div>
             <div style="flex: 1; height: 100%;">
-                <img src="91a564ad-5a88-4c8b-ae21-d34833e5c54b.jpeg" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                <img src="input_file_1.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
             </div>
         </div>
     </div>
 
-    <!-- 5. 홍보대사 & 모델 (image_0cd361.jpg 참조) -->
+    <!-- 5. 홍보대사 & 모델 (화이트 드레스 사진 적용) -->
     <div class="slide">
         <div class="content-box">
             <div class="section-title">Brand & Influence</div>
@@ -107,7 +105,7 @@
                     </div>
                 </div>
                 <div class="white-card">
-                    <img src="91a564ad-5a88-4c8b-ae21-d34833e5c54b.jpeg">
+                    <img src="input_file_0.png">
                     <div class="card-text">
                         <h4>뷰티 렌즈 모델</h4>
                         <p>브랜드 메인 모델</p>
@@ -117,10 +115,10 @@
         </div>
     </div>
 
-    <!-- 6. 학업 및 수상 (image_0cd2fd.jpg 참조) -->
+    <!-- 6. 수상 및 대외활동 (시점 반영) -->
     <div class="slide">
         <div class="content-box">
-            <div class="section-title">Awards & Academic</div>
+            <div class="section-title">Awards & Experience</div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
                 <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
                     <h3 style="color: var(--main-pink);">2024 AI 융합학술제</h3>
@@ -131,8 +129,9 @@
                     <p style="font-size: 24px; font-weight: 800;">최우수상 (First Prize)</p>
                 </div>
             </div>
-            <div style="margin-top: 30px; padding: 25px; background: var(--soft-pink); border-radius: 20px;">
-                <p><strong>2025 삼성 갤럭시 대학생 서포터즈</strong> 활동 중</p>
+            <div style="margin-top: 30px; padding: 25px; background: var(--soft-pink); border-radius: 20px; display: flex; justify-content: space-between; align-items: center;">
+                <p style="margin: 0; font-size: 18px;"><strong>2025 삼성 갤럭시 대학생 서포터즈</strong></p>
+                <span style="background: var(--main-pink); color: white; padding: 5px 15px; border-radius: 50px; font-size: 14px; font-weight: bold;">활동 수료</span>
             </div>
         </div>
     </div>
@@ -143,33 +142,26 @@
             <div class="section-title">Core Competencies</div>
             <div class="skill-container">
                 <div class="skill-bar-wrapper">
-                    <div class="skill-name"><span>Visual Directing (예술적 감각)</span><span>98%</span></div>
+                    <div class="skill-name"><span>Visual Directing</span><span>98%</span></div>
                     <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 98%;"></div></div>
                 </div>
                 <div class="skill-bar-wrapper">
-                    <div class="skill-name"><span>AI & Tech Convergence (융합 능력)</span><span>95%</span></div>
+                    <div class="skill-name"><span>AI & Tech Convergence</span><span>95%</span></div>
                     <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 95%;"></div></div>
                 </div>
                 <div class="skill-bar-wrapper">
-                    <div class="skill-name"><span>Public Speaking (커뮤니케이션)</span><span>92%</span></div>
+                    <div class="skill-name"><span>Communication</span><span>92%</span></div>
                     <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 92%;"></div></div>
-                </div>
-                <div class="skill-bar-wrapper">
-                    <div class="skill-name"><span>Brand Influence (파급력)</span><span>90%</span></div>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 8. 마무리 (협력 제안) -->
+    <!-- 8. 마무리 -->
     <div class="slide" style="background: var(--soft-pink);">
         <div class="content-box" style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
             <h1 style="font-size: 60px; margin-bottom: 20px;">Let's Create Together</h1>
-            <p style="font-size: 22px; color: #555; line-height: 1.6;">
-                예술과 기술의 경계를 허무는 새로운 도전을 기다립니다.<br>
-                윤윤영과 함께할 혁신적인 협업을 제안해주세요.
-            </p>
+            <p style="font-size: 22px; color: #555;">협력과 제안을 기다립니다.</p>
             <div style="margin-top: 50px;">
                 <p style="font-size: 20px; font-weight: 700;">📧 killer.yoon33@gmail.com</p>
                 <p style="font-size: 20px; font-weight: 700;">📸 @killer_yoon</p>
