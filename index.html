@@ -8,44 +8,39 @@
         :root { --main-pink: #FF85A2; --soft-pink: #FFF0F3; }
         body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Pretendard', sans-serif; background: #fff; }
         
-        /* 슬라이드 컨테이너 */
-        .slider-container { display: flex; width: 800%; height: 100vh; transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1); }
+        .slider-container { display: flex; width: 900%; height: 100vh; transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1); }
         .slide { width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; position: relative; background: linear-gradient(135deg, #fff 0%, #fff5f7 100%); }
+        .content-box { width: 90%; max-width: 1200px; height: 85vh; position: relative; padding: 40px; box-sizing: border-box; }
         
-        /* 콘텐츠 레이아웃 */
-        .content-box { width: 90%; max-width: 1200px; height: 80vh; position: relative; padding: 40px; box-sizing: border-box; }
-        
-        /* 폰트 스타일 */
         h1.main-title { font-size: 100px; font-weight: 900; margin: 0; letter-spacing: -4px; text-align: center; }
         .pink-text { color: var(--main-pink); font-style: italic; }
-        .section-title { font-size: 48px; font-weight: 800; border-left: 8px solid var(--main-pink); padding-left: 20px; margin-bottom: 50px; }
+        .section-title { font-size: 48px; font-weight: 800; border-left: 8px solid var(--main-pink); padding-left: 20px; margin-bottom: 40px; }
         
-        /* 자기소개 슬라이드 전용 (3번째 슬라이드) */
-        .intro-flex { display: flex; align-items: center; gap: 60px; margin-top: 40px; }
-        .profile-circle { width: 450px; height: 450px; border-radius: 50%; object-fit: cover; border: 15px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .intro-text h2 { font-size: 36px; color: var(--main-pink); margin-bottom: 20px; }
-        .intro-text p { font-size: 18px; line-height: 1.8; color: #555; }
+        /* 역량 그래프 스타일 */
+        .skill-container { margin-top: 30px; }
+        .skill-bar-wrapper { margin-bottom: 25px; }
+        .skill-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; display: flex; justify-content: space-between; }
+        .skill-bar-bg { background: #eee; height: 12px; border-radius: 10px; width: 100%; overflow: hidden; }
+        .skill-bar-fill { background: var(--main-pink); height: 100%; border-radius: 10px; transition: width 1s ease-in-out; }
 
-        /* 미스코리아 & 앰배서더 슬라이드 전용 */
-        .split-layout { display: flex; align-items: center; height: 100%; }
-        .text-side { flex: 1; padding-right: 50px; }
-        .img-side { flex: 1; height: 100%; }
-        .img-side img { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; }
-
-        /* 카드형 레이아웃 */
-        .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
-        .white-card { background: white; padding: 40px; border-radius: 25px; box-shadow: 0 10px 30px rgba(255, 133, 162, 0.05); }
+        /* 경력 카드 스타일 */
+        .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+        .white-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(255, 133, 162, 0.08); border: 1px solid #f0f0f0; }
+        .white-card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-text { padding: 15px; text-align: center; }
+        .card-text h4 { margin: 5px 0; font-size: 16px; color: #333; }
+        .card-text p { font-size: 13px; color: #888; margin: 0; }
 
         /* 네비게이션 */
         .nav-btns { position: fixed; bottom: 40px; right: 40px; display: flex; gap: 15px; z-index: 100; }
-        .nav-btn { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--main-pink); background: white; color: var(--main-pink); cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .nav-btn { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--main-pink); background: white; color: var(--main-pink); cursor: pointer; font-weight: bold; }
         .nav-btn:hover { background: var(--main-pink); color: white; }
     </style>
 </head>
 <body>
 
 <div class="slider-container" id="slider">
-    <!-- SLIDE 1: 표지 -->
+    <!-- 1. 표지 (image_0cd266.png 참조) -->
     <div class="slide">
         <div class="content-box" style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
             <p style="letter-spacing: 5px; color: var(--main-pink); font-weight: 700;">PROFESSIONAL PORTFOLIO</p>
@@ -54,7 +49,7 @@
         </div>
     </div>
 
-    <!-- SLIDE 2: 슬로건 -->
+    <!-- 2. 슬로건 (image_0cd661.jpg 참조) -->
     <div class="slide">
         <div class="content-box" style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
             <div style="width: 80px; height: 4px; background: var(--main-pink); margin: 0 auto 30px;"></div>
@@ -63,104 +58,122 @@
         </div>
     </div>
 
-    <!-- SLIDE 3: 자기소개 (윤영님 사진 적용) -->
+    <!-- 3. 자기소개 (image_0cd627.jpg 참조) -->
     <div class="slide">
         <div class="content-box">
             <div class="section-title">Personal Introduction</div>
-            <div class="intro-flex">
-                <img src="91a564ad-5a88-4c8b-ae21-d34833e5c54b.jpeg" class="profile-circle">
-                <div class="intro-text">
-                    <h2>Bright & Positive Energy</h2>
-                    <p>성균관대학교에서 동양화와 인공지능융합전공을 복수전공하고 있는 윤윤영입니다. 복잡한 기술의 시대 속에 예술적 감성과 밝은 에너지를 더해 본질을 명확히 전달하는 가치를 추구합니다.</p>
-                    <p style="font-weight: 800; color: #333; margin-top: 30px;">"복잡함 속에서도 본질을 잃지 않는 명확한 결과를 지향합니다."</p>
+            <div style="display: flex; align-items: center; gap: 50px; margin-top: 20px;">
+                <img src="91a564ad-5a88-4c8b-ae21-d34833e5c54b.jpeg" style="width: 400px; height: 400px; border-radius: 50%; object-fit: cover; border: 10px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <div style="flex: 1;">
+                    <h2 style="color: var(--main-pink); font-size: 32px;">Bright & Positive Energy</h2>
+                    <p style="font-size: 17px; line-height: 1.8; color: #555;">성균관대학교에서 동양화와 인공지능융합전공을 복수전공하고 있는 윤윤영입니다. 예술적 감성과 데이터 기술을 결합하여 본질을 명확히 전달하는 가치를 추구합니다.</p>
+                    <p style="font-weight: 800; font-size: 19px; margin-top: 20px;">"복잡함 속에서도 본질을 잃지 않는 명확한 결과를 지향합니다."</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- SLIDE 4: 학업 -->
+    <!-- 4. 미스코리아 경력 (image_0cd33e.jpg 참조) -->
+    <div class="slide">
+        <div class="content-box" style="display: flex; align-items: center;">
+            <div style="flex: 1; padding-right: 40px;">
+                <h1 style="font-size: 55px; margin-bottom: 10px;">2025 Miss Korea</h1>
+                <h2 style="color: var(--main-pink); font-size: 28px;">대전·세종·충청 '미' 수상 & 본선 진출</h2>
+                <p style="line-height: 1.8; color: #666; margin-top: 20px;">지역의 가치와 한국의 미를 현대적 지성으로 대표하며 예술적 활동을 전개하고 있습니다.</p>
+            </div>
+            <div style="flex: 1; height: 100%;">
+                <img src="91a564ad-5a88-4c8b-ae21-d34833e5c54b.jpeg" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. 홍보대사 & 모델 (image_0cd361.jpg 참조) -->
     <div class="slide">
         <div class="content-box">
-            <div class="section-title">Academic: Art meets Technology</div>
+            <div class="section-title">Brand & Influence</div>
             <div class="card-grid">
                 <div class="white-card">
-                    <h3 style="color: var(--main-pink);">Oriental Painting</h3>
-                    <p>전통 동양화의 분채 기법과 필묵의 리듬감을 연구합니다. 선의 미학과 여백의 가치를 현대적 예술로 승화시키는 작업을 지속하고 있습니다.</p>
+                    <img src="KakaoTalk_20260428_135613771_01_2.jpg">
+                    <div class="card-text">
+                        <h4>유네스코 홍보대사</h4>
+                        <p>2025 선정릉 문화거리</p>
+                    </div>
                 </div>
                 <div class="white-card">
-                    <h3 style="color: var(--main-pink);">AI Convergence</h3>
-                    <p>데이터 기반의 인공지능 기술을 예술 창작 프로세스에 융합합니다. 2024 AI 융합대학 학술제 대상을 수상하며 기술적 실현 가능성을 입증했습니다.</p>
+                    <img src="a74fb749-6fdc-45b3-ac34-4380eb31b087.jpeg">
+                    <div class="card-text">
+                        <h4>SODA 카메라</h4>
+                        <p>토끼상 어플 모델</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 5: 미스코리아 (윤영님 사진 적용) -->
-    <div class="slide">
-        <div class="content-box" style="padding: 0; overflow: hidden;">
-            <div class="split-layout">
-                <div class="text-side" style="padding-left: 40px;">
-                    <h1 style="font-size: 60px; margin-bottom: 10px;">2025 Miss Korea</h1>
-                    <h2 style="color: var(--main-pink); font-size: 32px; margin-bottom: 30px;">대전·세종·충청 '미' 수상</h2>
-                    <p style="line-height: 1.8; color: #666;">한국의 전통적 아름다움과 현대적 지성을 대표하는 미스코리아 본선 진출자로서, 지역의 가치와 예술적 감성을 널리 알리는 활동을 전개하고 있습니다.</p>
-                    <p style="color: var(--main-pink); font-weight: bold; margin-top: 30px;">👑 2025 미스코리아 본선 최종 후보</p>
-                </div>
-                <div class="img-side">
+                <div class="white-card">
                     <img src="91a564ad-5a88-4c8b-ae21-d34833e5c54b.jpeg">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 6: 모델 & 앰배서더 (윤영님 사진 적용) -->
-    <div class="slide">
-        <div class="content-box">
-            <div class="section-title">Ambassatorship Roles</div>
-            <div class="card-grid">
-                <div class="white-card" style="padding: 0; overflow: hidden;">
-                    <img src="KakaoTalk_20260428_135613771_01_2.jpg" style="width: 100%; height: 250px; object-fit: cover;">
-                    <div style="padding: 20px; text-align: center;">
-                        <h4 style="margin: 0;">UNESCO</h4>
-                        <p style="font-size: 14px; color: #888;">2025 유네스코 선정릉 홍보대사</p>
-                    </div>
-                </div>
-                <div class="white-card" style="padding: 0; overflow: hidden;">
-                    <img src="a74fb749-6fdc-45b3-ac34-4380eb31b087.jpeg" style="width: 100%; height: 250px; object-fit: cover;">
-                    <div style="padding: 20px; text-align: center;">
-                        <h4 style="margin: 0;">SODA App Model</h4>
-                        <p style="font-size: 14px; color: #888;">SODA 카메라 토끼상 메인 모델</p>
+                    <div class="card-text">
+                        <h4>뷰티 렌즈 모델</h4>
+                        <p>브랜드 메인 모델</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- SLIDE 7: 수상 실적 -->
+    <!-- 6. 학업 및 수상 (image_0cd2fd.jpg 참조) -->
     <div class="slide">
         <div class="content-box">
-            <div class="section-title">Awards and Recognition</div>
-            <table style="width: 100%; border-collapse: collapse; margin-top: 30px; font-size: 18px;">
-                <tr style="color: var(--main-pink); border-bottom: 2px solid var(--soft-pink);">
-                    <th style="padding: 20px; text-align: left;">Year</th>
-                    <th style="padding: 20px; text-align: left;">Award Name</th>
-                    <th style="padding: 20px; text-align: left;">Achievement</th>
-                </tr>
-                <tr style="border-bottom: 1px solid #eee;">
-                    <td style="padding: 20px;">2024</td>
-                    <td style="padding: 20px;">AI 융합대학 학술제</td>
-                    <td style="padding: 20px;">대상 (Grand Champion)</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #eee;">
-                    <td style="padding: 20px;">2024</td>
-                    <td style="padding: 20px;">사회문제해결 아이디어 공모전</td>
-                    <td style="padding: 20px;">최우수상 (First Prize)</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #eee;">
-                    <td style="padding: 20px;">2025</td>
-                    <td style="padding: 20px;">미스코리아 대전·세종·충청</td>
-                    <td style="padding: 20px;">'미' (3rd Place Winner)</td>
-                </tr>
-            </table>
+            <div class="section-title">Awards & Academic</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <h3 style="color: var(--main-pink);">2024 AI 융합학술제</h3>
+                    <p style="font-size: 24px; font-weight: 800;">대상 (Grand Champion)</p>
+                </div>
+                <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <h3 style="color: var(--main-pink);">사회문제해결 공모전</h3>
+                    <p style="font-size: 24px; font-weight: 800;">최우수상 (First Prize)</p>
+                </div>
+            </div>
+            <div style="margin-top: 30px; padding: 25px; background: var(--soft-pink); border-radius: 20px;">
+                <p><strong>2025 삼성 갤럭시 대학생 서포터즈</strong> 활동 중</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. 핵심 역량 그래프 -->
+    <div class="slide">
+        <div class="content-box">
+            <div class="section-title">Core Competencies</div>
+            <div class="skill-container">
+                <div class="skill-bar-wrapper">
+                    <div class="skill-name"><span>Visual Directing (예술적 감각)</span><span>98%</span></div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 98%;"></div></div>
+                </div>
+                <div class="skill-bar-wrapper">
+                    <div class="skill-name"><span>AI & Tech Convergence (융합 능력)</span><span>95%</span></div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill-bar-wrapper">
+                    <div class="skill-name"><span>Public Speaking (커뮤니케이션)</span><span>92%</span></div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+                </div>
+                <div class="skill-bar-wrapper">
+                    <div class="skill-name"><span>Brand Influence (파급력)</span><span>90%</span></div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. 마무리 (협력 제안) -->
+    <div class="slide" style="background: var(--soft-pink);">
+        <div class="content-box" style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
+            <h1 style="font-size: 60px; margin-bottom: 20px;">Let's Create Together</h1>
+            <p style="font-size: 22px; color: #555; line-height: 1.6;">
+                예술과 기술의 경계를 허무는 새로운 도전을 기다립니다.<br>
+                윤윤영과 함께할 혁신적인 협업을 제안해주세요.
+            </p>
+            <div style="margin-top: 50px;">
+                <p style="font-size: 20px; font-weight: 700;">📧 killer.yoon33@gmail.com</p>
+                <p style="font-size: 20px; font-weight: 700;">📸 @killer_yoon</p>
+            </div>
         </div>
     </div>
 </div>
@@ -176,10 +189,9 @@
     function moveSlide(dir) {
         currentIdx += dir;
         if (currentIdx < 0) currentIdx = 0;
-        if (currentIdx > 6) currentIdx = 6;
+        if (currentIdx > 7) currentIdx = 7;
         slider.style.transform = `translateX(-${currentIdx * 100}vw)`;
     }
-    // 키보드 방향키로도 조작 가능
     window.addEventListener('keydown', (e) => {
         if(e.key === 'ArrowRight') moveSlide(1);
         if(e.key === 'ArrowLeft') moveSlide(-1);
